@@ -157,11 +157,9 @@ fileSystems."/mnt/disk1/SteamLibrary/steamapps/compatdata" = {
     fuzzel
     waybar
     xwayland-satellite
-    pkgs.ayugram-desktop
     pkgs.polkit_gnome
     pkgs.gnome-extension-manager
     jetbrains.idea
-    pkgs.spotify
     gimp
     wget
     git
