@@ -19,10 +19,10 @@
             configName = "general(ALT)";  # Или любой конфиг из папки configs (general, general(ALT), general (SIMPLE FAKE) и т.д.)
 
             # Game Filter: "null" (отключен), "all" (TCP+UDP), "tcp" (только TCP), "udp" (только UDP)
-            gameFilter = "null";  # или "all", "tcp", "udp"
+            gameFilter = "udp";  # или "all", "tcp", "udp"
 
             # Добавляем кастомные домены в list-general-user.txt
-            listGeneral = [ "example.com" "test.org" "mysite.net" ];
+            listGeneral = [ "example.com" "test.org" "telegram.org" ];
 
             # Добавляем домены в list-exclude-user.txt (исключения)
             listExclude = [ "ubisoft.com" "origin.com" ];

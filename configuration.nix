@@ -97,6 +97,7 @@ fileSystems."/mnt/disk1/SteamLibrary/steamapps/compatdata" = {
   services.printing.enable = true;
   environment.shellAliases = {
   nixup = "sudo nixos-rebuild switch --flake /etc/nixos/#nixos";
+  nixsave = "cd /etc/nixos && sudo git add -A && sudo git commit -m 'Auto-save' && sudo git push";
 };
 
 
