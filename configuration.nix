@@ -100,6 +100,8 @@ fileSystems."/mnt/disk1/SteamLibrary/steamapps/compatdata" = {
   environment.shellAliases = {
   nixup = "sudo nixos-rebuild switch --flake /etc/nixos/#nixos";
   nixsave = "cd /etc/nixos && sudo git add -A && sudo git commit -m 'Auto-save' && sudo git push";
+  nixclear = "sudo nix-collect-garbage -d";
+  nixgens = "sudo nixos-rebuild list-generations";
   # Управление zapret
   zaps = "sudo systemctl status zapret-discord-youtube";       # status
   zapr = "sudo systemctl restart zapret-discord-youtube";      # restart
@@ -217,7 +219,7 @@ fileSystems."/mnt/disk1/SteamLibrary/steamapps/compatdata" = {
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "26.05"; # Did you read the comment?
- # =========================================================================
+  # =========================================================================
   #  Настройки Видеокарты NVIDIA
   # =========================================================================
   hardware.graphics = {
