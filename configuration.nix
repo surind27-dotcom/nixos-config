@@ -138,7 +138,7 @@ fileSystems."/mnt/disk1/SteamLibrary/steamapps/compatdata" = {
   programs.steam.enable = true;
   programs.niri.enable = true;
   programs.xwayland.enable = true;
-#  programs.thunar.enable = true;
+  programs.thunar.enable = true;
 #  programs.throne.enable = true;
 #  programs.throne.tunMode.enable = true;
 
@@ -169,6 +169,7 @@ fileSystems."/mnt/disk1/SteamLibrary/steamapps/compatdata" = {
     curl
     micro
     noctalia
+    noctalia-shell
     discord
    ];
 
