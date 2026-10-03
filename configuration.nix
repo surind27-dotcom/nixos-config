@@ -99,7 +99,7 @@ fileSystems."/mnt/disk1/SteamLibrary/steamapps/compatdata" = {
 #aliases
   environment.shellAliases = {
   nixup = "sudo nixos-rebuild switch --flake /etc/nixos/#nixos";
-  nixsave = "cd /etc/nixos && sudo git add -A && sudo git commit -m 'Auto-save' && sudo git push";
+  nixsave = "cd /etc/nixos && sudo git add -A && sudo git commit -m 'Auto-save' && sudo git push && cd ~";
   nixclear = "sudo nix-collect-garbage -d";
   nixgens = "sudo nixos-rebuild list-generations";
   # Управление zapret
