@@ -155,14 +155,15 @@ fileSystems."/mnt/disk1/SteamLibrary/steamapps/compatdata" = {
     fuzzel
     waybar
     xwayland-satellite
-    pkgs.polkit_gnome
-    pkgs.gnome-extension-manager
+    polkit_gnome
+    gnome-extension-manager
     jetbrains.idea
     gimp
     wget
     git
     curl
-    pkgs.micro
+    micro
+    noctalia
    ];
 
   # Some programs need SUID wrappers, can be configured further or are

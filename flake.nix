@@ -1,69 +1,44 @@
 {
-  description = "NixOS configuration with zapret-discord-youtube";
+  description = "NixOS configuration with zapret-discord-youtube and home-manager";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05"; # Укажите свою версию NixOS, но не ниже 25.11.
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
     zapret-discord-youtube.url = "github:kartavkun/zapret-discord-youtube";
+    home-manager = {
+      url = "github:nix-community/home-manager/release-26.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, zapret-discord-youtube }: {
+  outputs = { self, nixpkgs, zapret-discord-youtube, home-manager }: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./configuration.nix
 
+        # zapret
         zapret-discord-youtube.nixosModules.withTestTools
         {
           services.zapret-discord-youtube = {
             enable = true;
-            configName = "general(ALT)";  # Или любой конфиг из папки configs (general, general(ALT), general (SIMPLE FAKE) и т.д.)
-
-            # Game Filter: "null" (отключен), "all" (TCP+UDP), "tcp" (только TCP), "udp" (только UDP)
-            gameFilter = "udp";  # или "all", "tcp", "udp"
-
-            # Добавляем кастомные домены в list-general-user.txt
+            configName = "general(ALT)";
+            gameFilter = "udp";
             listGeneral = [ "example.com" "test.org" "telegram.org" ];
-
-            # Добавляем домены в list-exclude-user.txt (исключения)
             listExclude = [ "ubisoft.com" "origin.com" ];
-
-            # Добавляем IP адреса в ipset-all.txt
             ipsetAll = [ "192.168.1.0/24" "10.0.0.1" ];
-
-            # Добавляем IP адреса в ipset-exclude-user.txt (исключения)
             ipsetExclude = [ "203.0.113.0/24" ];
-
-            # Необязательно: пользовательские hostlists и конфиги.
-            # extraHostlists может содержать несколько файлов.
-            # Если нужен пример для GitHub, раскомментируйте блок ниже
-            # и оставьте в configName выбранный вами готовый конфиг.
-            #
-            # extraHostlists."list-github.txt" = [
-            #   "github.com"
-            #   "api.github.com"
-            #   "raw.githubusercontent.com"
-            #   "objects.githubusercontent.com"
-            #   "githubusercontent.com"
-            #   "githubassets.com"
-            # ];
-            #
-            # extraHostlists."list-custom.txt" = [
-            #   "example.com"
-            #   "example.org"
-            # ];
-            #
-            # nfqwsAppend = [
-            #   ''--filter-tcp=443 --hostlist="/opt/zapret/hostlists/list-github.txt" --dpi-desync=multisplit --dpi-desync-split-pos=2''
-            # ];
-            #
-            # Для полностью ручного конфига можно создать отдельный файл:
-            # extraConfigs."my-custom-config" = ''
-            #   NFQWS_ENABLE=1
-            #   NFQWS_OPT="
-            #   --filter-tcp=443 --hostlist="/opt/zapret/hostlists/list-github.txt" --dpi-desync=multisplit --dpi-desync-split-pos=2
-            #   "
-            # '';
           };
+        }
+
+        # home-manager
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.danil = import ./home.nix;
+          home-manager.backupFileExtension = "backup";  # <-- ДОБАВЬ ЭТУ СТРОКУ
+          # Если что-то пойдёт не так при сборке — раскомментируй для отката:
+          # home-manager.backupFileExtension = "backup";
         }
       ];
     };
