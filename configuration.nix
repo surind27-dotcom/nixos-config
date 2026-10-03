@@ -100,6 +100,12 @@ fileSystems."/mnt/disk1/SteamLibrary/steamapps/compatdata" = {
   environment.shellAliases = {
   nixup = "sudo nixos-rebuild switch --flake /etc/nixos/#nixos";
   nixsave = "cd /etc/nixos && sudo git add -A && sudo git commit -m 'Auto-save' && sudo git push";
+  # Управление zapret
+  zaps = "sudo systemctl status zapret-discord-youtube";       # status
+  zapr = "sudo systemctl restart zapret-discord-youtube";      # restart
+  zapstop = "sudo systemctl stop zapret-discord-youtube";      # stop
+  zapstart = "sudo systemctl start zapret-discord-youtube";    # start
+  zaplog = "sudo journalctl -u zapret-discord-youtube -f";     # live log
 };
 
 
@@ -153,7 +159,6 @@ fileSystems."/mnt/disk1/SteamLibrary/steamapps/compatdata" = {
     fastfetch
     alacritty
     fuzzel
-    waybar
     xwayland-satellite
     polkit_gnome
     gnome-extension-manager
@@ -164,6 +169,7 @@ fileSystems."/mnt/disk1/SteamLibrary/steamapps/compatdata" = {
     curl
     micro
     noctalia
+    discord
    ];
 
   # Some programs need SUID wrappers, can be configured further or are

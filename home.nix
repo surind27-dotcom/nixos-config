@@ -12,22 +12,15 @@
     # vesktop
   ];
 
-  # Алиасы (можно убрать из configuration.nix)
-  home.shellAliases = {
-    nixup = "sudo nixos-rebuild switch --flake /etc/nixos/#nixos";
-    nixsave = "cd /etc/nixos && sudo git add -A && sudo git commit -m 'Auto-save' && sudo git push";
-    # Управление zapret
-    zaps = "sudo systemctl status zapret-discord-youtube";       # status
-    zapr = "sudo systemctl restart zapret-discord-youtube";      # restart
-    zapstop = "sudo systemctl stop zapret-discord-youtube";      # stop
-    zapstart = "sudo systemctl start zapret-discord-youtube";    # start
-    zaplog = "sudo journalctl -u zapret-discord-youtube -f";     # live logs
-  };
 
   # Настройки программ
   programs.alacritty = {
     enable = true;
     settings = {
+      general = {
+            import = [ "~/.config/alacritty/themes/noctalia.toml" ];
+            live_config_reload = true;
+          };
       font = {
         size = 12;
         normal = {
