@@ -8,8 +8,9 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./happ.nix
     ];
+#flakes enable
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = false;
@@ -18,7 +19,7 @@
   boot.loader.grub.device = "nodev";
   boot.loader.grub.efiSupport = true;
   boot.loader.grub.useOSProber = true;
-  boot.supportedFilesystems = ["ntfs"];
+  boot.supportedFilesystems = ["ntfs3"];
 # disks
   fileSystems."/mnt/disk1" = {
   device = "/dev/disk/by-uuid/EAFC148BFC1453E3";
@@ -95,6 +96,7 @@ fileSystems."/mnt/disk1/SteamLibrary/steamapps/compatdata" = {
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+#aliases
   environment.shellAliases = {
   nixup = "sudo nixos-rebuild switch --flake /etc/nixos/#nixos";
   nixsave = "cd /etc/nixos && sudo git add -A && sudo git commit -m 'Auto-save' && sudo git push";
@@ -125,18 +127,17 @@ fileSystems."/mnt/disk1/SteamLibrary/steamapps/compatdata" = {
     #  thunderbird
     ];
   };
-
-  # Install firefox.
+#programs
   programs.firefox.enable = true;
   programs.steam.enable = true;
   programs.niri.enable = true;
   programs.xwayland.enable = true;
-  programs.thunar.enable = true;
-  programs.throne.enable = true;
-  programs.throne.tunMode.enable = true;
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+#  programs.thunar.enable = true;
+#  programs.throne.enable = true;
+#  programs.throne.tunMode.enable = true;
+
+#Fonts Nerd Fonts
   fonts.packages = with pkgs; [
-  # Установка конкретных Nerd Fonts (в современных версиях NixOS синтаксис выглядит так)
   nerd-fonts.jetbrains-mono
   nerd-fonts.fira-code
 ];
@@ -148,10 +149,7 @@ fileSystems."/mnt/disk1/SteamLibrary/steamapps/compatdata" = {
   nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile.
-  # You can use https://search.nixos.org/ to find more packages (and options).
    environment.systemPackages = with pkgs; [
-  #   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #   wget
     fastfetch
     alacritty
     fuzzel
@@ -164,6 +162,7 @@ fileSystems."/mnt/disk1/SteamLibrary/steamapps/compatdata" = {
     wget
     git
     curl
+    pkgs.micro
    ];
 
   # Some programs need SUID wrappers, can be configured further or are
