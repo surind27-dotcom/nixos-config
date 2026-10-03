@@ -102,6 +102,7 @@ fileSystems."/mnt/disk1/SteamLibrary/steamapps/compatdata" = {
   nixsave = "cd /etc/nixos && sudo git add -A && sudo git commit -m 'Auto-save' && sudo git push; cd ~";
   nixclear = "sudo nix-collect-garbage -d";
   nixgens = "sudo nixos-rebuild list-generations";
+  nixupdate = "cd /etc/nixos && sudo nix flake update && sudo nixos-rebuild switch --flake .#nixos";
   # Управление zapret
   zaps = "sudo systemctl status zapret-discord-youtube";       # status
   zapr = "sudo systemctl restart zapret-discord-youtube";      # restart
