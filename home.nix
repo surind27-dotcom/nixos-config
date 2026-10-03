@@ -1,3 +1,4 @@
+
 { pkgs, ... }:
 
 {
@@ -21,6 +22,9 @@
             import = [ "~/.config/alacritty/themes/noctalia.toml" ];
             live_config_reload = true;
           };
+      window = {
+      opacity = 0.85;
+      };
       font = {
         size = 12;
         normal = {

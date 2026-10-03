@@ -167,10 +167,12 @@ fileSystems."/mnt/disk1/SteamLibrary/steamapps/compatdata" = {
     wget
     git
     curl
-    micro
+    vim
     noctalia
     noctalia-shell
     discord
+    appimage-run
+    cava
    ];
 
   # Some programs need SUID wrappers, can be configured further or are
