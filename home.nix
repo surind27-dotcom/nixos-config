@@ -9,6 +9,7 @@
   ./modules/home/fastfetch.nix
   ./modules/home/pointer.nix
   ./modules/home/yazi.nix
+  ./modules/home/bash.nix
   ];
 
   home.stateVersion = "26.05";
