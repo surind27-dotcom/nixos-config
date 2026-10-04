@@ -5,7 +5,6 @@
     alacritty yazi
     fuzzel kitty
     xwayland-satellite
-    polkit_gnome
     gnome-extension-manager
     jetbrains.idea
     gimp
@@ -19,6 +18,5 @@
     appimage-run
     cava
     gpu-screen-recorder
-    virtualbox
    ];
 }

@@ -10,7 +10,7 @@
       ./hardware-configuration.nix
       ./modules/system/disks.nix
       ./modules/system/packages.nix
-      ./modules/system/packages.nix
+      ./modules/system/aliases.nix
     ];
 #flakes enable
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -99,7 +99,7 @@
   programs.steam.enable = true;
   programs.niri.enable = true;
   programs.xwayland.enable = true;
-  programs.thunar.enable = true;
+#  programs.thunar.enable = true;
 #  programs.throne.enable = true;
 #  programs.throne.tunMode.enable = true;
   programs.bash.enableCompletion = true;
