@@ -5,9 +5,9 @@
   # home.username и home.homeDirectory НЕ указываем —
   # NixOS-модуль подставит их из configuration.nix
   imports = [
-  ./modules/kitty.nix
-  ./modules/fastfetch.nix
-  ./modules/pointer.nix
+  ./modules/home/kitty.nix
+  ./modules/home/fastfetch.nix
+  ./modules/home/pointer.nix
   ];
 
   home.stateVersion = "26.05";

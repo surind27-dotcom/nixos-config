@@ -8,6 +8,9 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./modules/system/disks.nix
+      ./modules/system/packages.nix
+      ./modules/system/packages.nix
     ];
 #flakes enable
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -20,37 +23,6 @@
   boot.loader.grub.efiSupport = true;
   boot.loader.grub.useOSProber = true;
   boot.supportedFilesystems = ["ntfs3"];
-# disks
-  fileSystems."/mnt/disk1" = {
-  device = "/dev/disk/by-uuid/EAFC148BFC1453E3";
-  fsType = "ntfs3";
-  options = [
-    "rw"
-    "uid=1000"
-    "gid=100"
-    "umask=0000"
-    "nofail"
-    "noatime"
-  ];
-};
-
-fileSystems."/mnt/disk2" = {
-  device = "/dev/disk/by-uuid/BEF096DAF096986B";
-  fsType = "ntfs3";
-  options = [
-    "rw"
-    "uid=1000"
-    "gid=100"
-    "umask=0000"
-    "nofail"
-    "noatime"
-  ];
-};
-fileSystems."/mnt/disk1/SteamLibrary/steamapps/compatdata" = {
-  device = "/home/danil/.steam/steam/steamapps/compatdata";
-  fsType = "none";
-  options = [ "bind" "nofail" ];
-};
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -96,20 +68,6 @@ fileSystems."/mnt/disk1/SteamLibrary/steamapps/compatdata" = {
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
-#aliases
-  environment.shellAliases = {
-  nixup = "sudo nixos-rebuild switch --flake /etc/nixos/#nixos";
-  nixsave = "cd /etc/nixos && sudo git add -A && sudo git commit -m 'Auto-save' && sudo git push; cd ~";
-  nixclear = "sudo nix-collect-garbage -d";
-  nixgens = "sudo nixos-rebuild list-generations";
-  nixupdate = "cd /etc/nixos && sudo nix flake update && sudo nixos-rebuild switch --flake .#nixos";
-  # Управление zapret
-  zaps = "sudo systemctl status zapret-discord-youtube";       # status
-  zapr = "sudo systemctl restart zapret-discord-youtube";      # restart
-  zapstop = "sudo systemctl stop zapret-discord-youtube";      # stop
-  zapstart = "sudo systemctl start zapret-discord-youtube";    # start
-  zaplog = "sudo journalctl -u zapret-discord-youtube -f";     # live log
-};
 
 
   # Enable sound with pipewire.
@@ -158,27 +116,6 @@ fileSystems."/mnt/disk1/SteamLibrary/steamapps/compatdata" = {
   nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile.
-   environment.systemPackages = with pkgs; [
-    fastfetch bash-completion
-    alacritty yazi
-    fuzzel kitty
-    xwayland-satellite
-    polkit_gnome
-    gnome-extension-manager
-    jetbrains.idea
-    gimp
-    wget
-    git
-    curl
-    vim
-    noctalia
-    noctalia-shell
-    discord
-    appimage-run
-    cava
-    gpu-screen-recorder
-    virtualbox
-   ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
