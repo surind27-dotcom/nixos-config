@@ -8,6 +8,7 @@
   ./modules/home/kitty.nix
   ./modules/home/fastfetch.nix
   ./modules/home/pointer.nix
+  ./modules/home/yazi.nix
   ];
 
   home.stateVersion = "26.05";

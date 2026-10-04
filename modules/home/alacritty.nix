@@ -1,3 +1,4 @@
+#НЕ подключен в home.nix
 {pkgs, ...}:
 { 
  programs.alacritty = {
