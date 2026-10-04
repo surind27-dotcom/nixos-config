@@ -13,7 +13,6 @@
     curl
     vim
     noctalia
-    noctalia-shell
     discord
     appimage-run
     cava
