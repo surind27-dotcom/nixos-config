@@ -6,6 +6,8 @@
   # NixOS-модуль подставит их из configuration.nix
   imports = [
   ./modules/kitty.nix
+  ./modules/fastfetch.nix
+  ./modules/pointer.nix
   ];
 
   home.stateVersion = "26.05";
@@ -15,7 +17,6 @@
     # например, если хочешь что-то только для себя, а не для всей системы:
     # vesktop
   ];
-
   programs.bash.enableCompletion = true;
   # Настройки программ
   /*
@@ -97,7 +98,7 @@
       };
     };
   };
-*/
+
   programs.fastfetch = {
     enable = true;
     settings = {
