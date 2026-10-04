@@ -13,7 +13,7 @@
     # vesktop
   ];
 
-
+  programs.bash.enableCompletion = true;
   # Настройки программ
   programs.alacritty = {
     enable = true;

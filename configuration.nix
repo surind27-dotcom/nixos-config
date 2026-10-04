@@ -144,7 +144,7 @@ fileSystems."/mnt/disk1/SteamLibrary/steamapps/compatdata" = {
   programs.thunar.enable = true;
 #  programs.throne.enable = true;
 #  programs.throne.tunMode.enable = true;
-
+  programs.bash.enableCompletion = true;
 #Fonts Nerd Fonts
   fonts.packages = with pkgs; [
   nerd-fonts.jetbrains-mono
@@ -159,7 +159,7 @@ fileSystems."/mnt/disk1/SteamLibrary/steamapps/compatdata" = {
 
   # List packages installed in system profile.
    environment.systemPackages = with pkgs; [
-    fastfetch
+    fastfetch bash-completion
     alacritty
     fuzzel
     xwayland-satellite
@@ -176,6 +176,8 @@ fileSystems."/mnt/disk1/SteamLibrary/steamapps/compatdata" = {
     discord
     appimage-run
     cava
+    gpu-screen-recorder
+    virtualbox
    ];
 
   # Some programs need SUID wrappers, can be configured further or are
