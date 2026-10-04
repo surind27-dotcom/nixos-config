@@ -160,8 +160,8 @@ fileSystems."/mnt/disk1/SteamLibrary/steamapps/compatdata" = {
   # List packages installed in system profile.
    environment.systemPackages = with pkgs; [
     fastfetch bash-completion
-    alacritty
-    fuzzel
+    alacritty yazi
+    fuzzel kitty
     xwayland-satellite
     polkit_gnome
     gnome-extension-manager

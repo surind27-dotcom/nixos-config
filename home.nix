@@ -4,6 +4,9 @@
 {
   # home.username и home.homeDirectory НЕ указываем —
   # NixOS-модуль подставит их из configuration.nix
+  imports = [
+  ./modules/kitty.nix
+  ];
 
   home.stateVersion = "26.05";
 
@@ -15,6 +18,31 @@
 
   programs.bash.enableCompletion = true;
   # Настройки программ
+  /*
+    programs.kitty = {
+    enable = true;
+
+    # 1. Настройки шрифта выносим в отдельную опцию font
+    font = {
+      name = "JetBrainsMono Nerd Font";
+      size = 12;
+    };
+
+    # 2. В settings оставляем только простые (плоские) параметры
+    settings = {
+      background_opacity = "0.85";
+      dynamic_background_opacity = true;
+     # background_blur = 2;
+      live_config_reload = true;
+      confirm_os_window_close = 0;
+    };
+
+    # 3. Подключение темы Noctalia и другие нестандартные настройки — через extraConfig
+    extraConfig = ''
+      include ~/.config/kitty/themes/noctalia.conf
+    '';
+  };*/
+/* 
   programs.alacritty = {
     enable = true;
     settings = {
@@ -69,7 +97,7 @@
       };
     };
   };
-
+*/
   programs.fastfetch = {
     enable = true;
     settings = {
@@ -90,6 +118,23 @@
         "break"
         "colors"
       ];
+    };
+  };
+
+ home.pointerCursor = {
+    gtk.enable = true;
+    x11.enable = true;
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Ice";
+    size = 24;
+  };
+
+  # Настройки GTK — это ОТДЕЛЬНЫЙ блок, не внутри pointerCursor!
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Adwaita-dark"; # или ваша тема
+      package = pkgs.adwaita-icon-theme;
     };
   };
 }

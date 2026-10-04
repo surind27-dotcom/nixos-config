@@ -23,7 +23,7 @@
             enable = true;
             configName = "general(ALT)";
             gameFilter = "udp";
-            listGeneral = [ "nix.org" "discord.com" "telegram.org" ];
+            listGeneral = [ "example.org" "discord.com" "telegram.org" ];
             listExclude = [ "ubisoft.com" "origin.com" ];
             ipsetAll = [ "192.168.1.0/24" "10.0.0.1" ];
             ipsetExclude = [ "203.0.113.0/24" ];
