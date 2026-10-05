@@ -4,8 +4,8 @@
     fastfetch bash-completion
     alacritty yazi
     fuzzel kitty
-    xwayland-satellite
-    gnome-extension-manager
+    xwayland-satellite pkgs.kdePackages.kdenlive  
+    gnome-extension-manager mpv
     jetbrains.idea
     gimp
     wget
@@ -17,5 +17,7 @@
     appimage-run
     cava
     gpu-screen-recorder
+    sptlrx
+    toilet
    ];
 }
