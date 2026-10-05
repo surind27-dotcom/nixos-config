@@ -4,7 +4,7 @@
     fastfetch bash-completion
     alacritty yazi
     fuzzel kitty
-    xwayland-satellite pkgs.kdePackages.kdenlive  
+    xwayland-satellite kdePackages.kdenlive  
     gnome-extension-manager mpv
     jetbrains.idea
     gimp

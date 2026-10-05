@@ -13,7 +13,7 @@
     enable = true;
     theme = {
       name = "Adwaita-dark"; # или ваша тема
-      package = pkgs.adwaita-icon-theme;
+      package = pkgs.gnome-themes-extra;
     };
   };
 }
