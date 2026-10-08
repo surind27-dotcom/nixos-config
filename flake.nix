@@ -1,20 +1,24 @@
 {
-  description = "NixOS configuration with zapret-discord-youtube and home-manager";
+  description = "NixOS configuration with zapret-discord-youtube, driftwm and home-manager";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
     zapret-discord-youtube.url = "github:kartavkun/zapret-discord-youtube";
+    driftwm.url = "github:malbiruk/driftwm";  # <-- добавили driftwm
     home-manager = {
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, zapret-discord-youtube, home-manager }: {
+  outputs = { self, nixpkgs, zapret-discord-youtube, driftwm, home-manager }: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./configuration.nix
+
+        # driftwm
+        driftwm.nixosModules.default  # <-- модуль композитора
 
         # zapret
         zapret-discord-youtube.nixosModules.withTestTools
@@ -36,9 +40,7 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users.danil = import ./home.nix;
-          home-manager.backupFileExtension = "backup";  # <-- ДОБАВЬ ЭТУ СТРОКУ
-          # Если что-то пойдёт не так при сборке — раскомментируй для отката:
-          # home-manager.backupFileExtension = "backup";
+          home-manager.backupFileExtension = "backup";
         }
       ];
     };

@@ -104,6 +104,7 @@
 #  programs.throne.enable = true;
 #  programs.throne.tunMode.enable = true;
   programs.bash.enableCompletion = true;
+  programs.driftwm.enable = true;
 #Fonts Nerd Fonts
   fonts.packages = with pkgs; [
   nerd-fonts.jetbrains-mono

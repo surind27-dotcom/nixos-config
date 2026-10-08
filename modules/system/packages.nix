@@ -5,8 +5,8 @@
     alacritty yazi
     fuzzel kitty
     xwayland-satellite kdePackages.kdenlive  
-    gnome-extension-manager mpv
-    jetbrains.idea
+    gnome-extension-manager mpv 
+    jetbrains.idea zed-editor
     gimp
     wget
     git
