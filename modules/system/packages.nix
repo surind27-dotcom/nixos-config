@@ -6,7 +6,7 @@
     fuzzel kitty
     xwayland-satellite kdePackages.kdenlive  
     gnome-extension-manager mpv 
-    jetbrains.idea zed-editor
+    zed-editor
     gimp
     wget
     git
