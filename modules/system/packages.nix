@@ -6,7 +6,7 @@
     fuzzel kitty
     xwayland-satellite kdePackages.kdenlive  
     gnome-extension-manager mpv 
-    zed-editor
+    zed-editor blender
     gimp
     wget
     git
@@ -19,5 +19,6 @@
     gpu-screen-recorder
     sptlrx
     toilet
+    libxkbcommon
    ];
 }

@@ -11,6 +11,7 @@
       ./modules/system/disks.nix
       ./modules/system/packages.nix
       ./modules/system/aliases.nix
+      ./modules/system/minecraft.nix
     ];
 #flakes enable
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -174,7 +175,7 @@
   hardware.nvidia = {
     modesetting.enable = true;
     powerManagement.enable = true;
-    open = false; # Ставь true, только если у тебя видеокарта RTX 2000 или новее
+    open = true; # Ставь true, только если у тебя видеокарта RTX 2000 или новее
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
