@@ -2,7 +2,7 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, pkgs, ... }:
+{ config, pkgs, biri, ... }:
 
 {
   imports =
@@ -11,7 +11,6 @@
       ./modules/system/disks.nix
       ./modules/system/packages.nix
       ./modules/system/aliases.nix
-      ./modules/system/minecraft.nix
     ];
 #flakes enable
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -60,7 +59,9 @@
   services.displayManager.ly.enable = true;
   services.desktopManager.gnome.enable = true;
   services.udisks2.enable = true;
+  services.lact.enable = true;
   security.polkit.enable = true;
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -99,13 +100,26 @@
 #programs
   programs.firefox.enable = true;
   programs.steam.enable = true;
-  programs.niri.enable = true;
+  programs.niri = {
+    enable = true;
+    package = biri.packages.${pkgs.system}.default;
+  };
   programs.xwayland.enable = true;
 #  programs.thunar.enable = true;
 #  programs.throne.enable = true;
 #  programs.throne.tunMode.enable = true;
   programs.bash.enableCompletion = true;
   programs.driftwm.enable = true;
+  programs.river-classic.enable = true;
+  # Включает хост-модуль VirtualBox
+  virtualisation.virtualbox.host.enable = true;
+  virtualisation.virtualbox.host.enableExtensionPack = true;
+  services.flatpak.enable = true;
+
+  # Добавляет вашего пользователя в группу vboxusers.
+  # Без этого вы не сможете запускать виртуальные машины от своего имени.
+  users.extraGroups.vboxusers.members = [ "danil" ];
+
 #Fonts Nerd Fonts
   fonts.packages = with pkgs; [
   nerd-fonts.jetbrains-mono

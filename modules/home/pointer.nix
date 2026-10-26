@@ -9,11 +9,20 @@
   };
 
   # Настройки GTK — это ОТДЕЛЬНЫЙ блок, не внутри pointerCursor!
-  gtk = {
-    enable = true;
-    theme = {
-      name = "Adwaita-dark"; # или ваша тема
-      package = pkgs.gnome-themes-extra;
-    };
+ gtk = {
+  enable = true;
+  theme = {
+    name = "Nordic";
+    package = pkgs.nordic;
   };
+  iconTheme = {
+    name = "Papirus-Dark";
+    package = pkgs.papirus-icon-theme;
+  };
+};
+
+home.packages = with pkgs; [
+  nordic
+  papirus-icon-theme
+];
 }

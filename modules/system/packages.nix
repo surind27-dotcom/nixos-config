@@ -7,18 +7,18 @@
     xwayland-satellite kdePackages.kdenlive  
     gnome-extension-manager mpv 
     zed-editor blender
-    gimp
-    wget
-    git
-    curl
-    vim
-    noctalia
-    discord
-    appimage-run
-    cava
-    gpu-screen-recorder
-    sptlrx
-    toilet
+    gimp vesktop 
+    wget qbittorrent
+    git cmus
+    curl lact
+    vim godot
+    noctalia kdePackages.ark
+    discord python3
+    appimage-run zig
+    cava zls
+    gpu-screen-recorder lldb
+    sptlrx 
+    toilet 
     libxkbcommon
    ];
 }

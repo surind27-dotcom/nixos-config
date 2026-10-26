@@ -9,11 +9,13 @@
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    biri.url = "github:barrulus/biri";
   };
 
-  outputs = { self, nixpkgs, zapret-discord-youtube, driftwm, home-manager }: {
+  outputs = { self, nixpkgs, zapret-discord-youtube, driftwm, home-manager, biri, ...}: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
+      specialArgs = { inherit biri; };
       modules = [
         ./configuration.nix
 
@@ -27,7 +29,7 @@
             enable = true;
             configName = "general(ALT)";
             gameFilter = "udp";
-            listGeneral = [ "example.org" "discord.com" "telegram.org" ];
+            listGeneral = [ "gnu.org" "discord.com" "telegram.org" "guix.gnu.org" "distrowatch.com" ];
             listExclude = [ "ubisoft.com" "origin.com" ];
             ipsetAll = [ "192.168.1.0/24" "10.0.0.1" ];
             ipsetExclude = [ "203.0.113.0/24" ];
