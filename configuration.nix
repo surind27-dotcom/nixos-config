@@ -2,7 +2,7 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, pkgs, biri, ... }:
+{ config, pkgs, ... }:
 
 {
   imports =
@@ -102,7 +102,6 @@
   programs.steam.enable = true;
   programs.niri = {
     enable = true;
-    package = biri.packages.${pkgs.system}.default;
   };
   programs.xwayland.enable = true;
 #  programs.thunar.enable = true;
