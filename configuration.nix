@@ -11,6 +11,7 @@
       ./modules/system/disks.nix
       ./modules/system/packages.nix
       ./modules/system/aliases.nix
+      ./modules/system/ollama.nix
     ];
 #flakes enable
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
