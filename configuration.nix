@@ -107,9 +107,7 @@
 #  programs.thunar.enable = true;
 #  programs.throne.enable = true;
 #  programs.throne.tunMode.enable = true;
-  programs.bash.enableCompletion = true;
   programs.driftwm.enable = true;
-  programs.river-classic.enable = true;
   # Включает хост-модуль VirtualBox
   virtualisation.virtualbox.host.enable = true;
   virtualisation.virtualbox.host.enableExtensionPack = true;

@@ -27,7 +27,7 @@
             enable = true;
             configName = "general(ALT)";
             gameFilter = "all";
-            listGeneral = [ "gnu.org" "discord.com" "telegram.org" "guix.gnu.org" "distrowatch.com" ];
+            listGeneral = [ "gnu.org" "discord.com" "telegram.org" "guix.gnu.org" "distrowatch.com" "exherbolinux.org" ];
             listExclude = [ "ubisoft.com" "origin.com" ];
             ipsetAll = [ "192.168.1.0/24" "10.0.0.1" ];
             ipsetExclude = [ "203.0.113.0/24" ];
