@@ -9,16 +9,20 @@
     zed-editor blender
     gimp vesktop 
     wget qbittorrent
-    git cmus
+    git xorg.xrandr
     curl lact
-    vim godot
-    noctalia kdePackages.ark
+    godot
+    noctalia 
     discord python3
-    appimage-run zig
-    cava zls
-    gpu-screen-recorder lldb
-    sptlrx 
+    appimage-run 
+    cava steam-run
+    gpu-screen-recorder 
+    sptlrx aider-chat
     toilet 
     libxkbcommon
+    thunar
+    ristretto xarchiver
+    gnome-disk-utility warehouse
+    mindustry-wayland devilutionx
    ];
 }

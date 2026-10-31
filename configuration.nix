@@ -56,9 +56,9 @@
   };
 
   # Enable the GNOME Desktop Environment.
-#  services.displayManager.gdm.enable = false;
+  services.displayManager.gdm.enable = false;
   services.displayManager.ly.enable = true;
-  services.desktopManager.gnome.enable = true;
+  services.desktopManager.gnome.enable = false;
   services.udisks2.enable = true;
   services.lact.enable = true;
   security.polkit.enable = true;
@@ -100,7 +100,10 @@
   };
 #programs
   programs.firefox.enable = true;
-  programs.steam.enable = true;
+  programs.steam = {
+  enable = true;
+  extest.enable = true; # Обход проблемы с невидимым/сломанным курсором
+};
   programs.niri = {
     enable = true;
   };
@@ -108,6 +111,34 @@
 #  programs.thunar.enable = true;
 #  programs.throne.enable = true;
 #  programs.throne.tunMode.enable = true;
+programs.nix-ld = {
+  enable = false;
+  libraries = with pkgs; [
+    libx11
+    libxext
+    libxcursor
+    libxrandr  # <--- Вот это библиотека (libXrandr.so), она нужна
+    libxxf86vm
+    libxi
+    libxrender
+    libxtst
+    libxcomposite
+    libxdamage
+    libxfixes
+    libxinerama
+    libxscrnsaver
+    libsm
+    libice
+    libxcb 
+
+    alsa-lib
+    libpulseaudio
+    libGL
+    openssl
+    zlib
+    stdenv.cc.cc.lib
+  ];
+};
   programs.driftwm.enable = true;
   # Включает хост-модуль VirtualBox
   virtualisation.virtualbox.host.enable = true;

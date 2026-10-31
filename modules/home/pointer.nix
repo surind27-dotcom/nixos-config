@@ -1,4 +1,4 @@
-{pkgs,...}:
+{pkgs, ...}:
 { 
   home.pointerCursor = {
     gtk.enable = true;
@@ -8,21 +8,21 @@
     size = 24;
   };
 
-  # Настройки GTK — это ОТДЕЛЬНЫЙ блок, не внутри pointerCursor!
- gtk = {
-  enable = true;
-  theme = {
-    name = "Nordic";
-    package = pkgs.nordic;
+  # Блок GTK закрывается здесь
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Nordic";
+      package = pkgs.nordic;
+    };
+    iconTheme = {
+      name = "Papirus-Dark";
+      package = pkgs.papirus-icon-theme;
+    };
   };
-  iconTheme = {
-    name = "Papirus-Dark";
-    package = pkgs.papirus-icon-theme;
-  };
-};
 
-home.packages = with pkgs; [
-  nordic
-  papirus-icon-theme
-];
+  home.packages = with pkgs; [
+    nordic
+    papirus-icon-theme
+  ];
 }
