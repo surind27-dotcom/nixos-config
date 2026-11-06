@@ -19,7 +19,7 @@
     gpu-screen-recorder 
     sptlrx aider-chat
     toilet xfce4-xkb-plugin
-    libxkbcommon
+    libxkbcommon ytmdesktop
     thunar
     ristretto xarchiver
     gnome-disk-utility warehouse
