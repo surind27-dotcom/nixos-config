@@ -41,7 +41,13 @@
   time.timeZone = "Europe/Moscow";
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
+  i18n = {
+  defaultLocale = "ru_RU.UTF-8";
+  supportedLocales = [
+    "ru_RU.UTF-8/UTF-8"
+    "en_US.UTF-8/UTF-8"
+  ];
+};
 
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "ru_RU.UTF-8";
@@ -62,11 +68,14 @@
   services.udisks2.enable = true;
   services.lact.enable = true;
   security.polkit.enable = true;
-
+  services.xserver.enable = true;
+  services.xserver.desktopManager.xfce.enable = true;
+  services.xserver.desktopManager.xterm.enable = false;
   # Configure keymap in X11
   services.xserver.xkb = {
-    layout = "us";
+    layout = "us,ru";
     variant = "";
+    options = "grp:win_space_toggle";
   };
   
 
@@ -108,11 +117,10 @@
     enable = true;
   };
   programs.xwayland.enable = true;
-#  programs.thunar.enable = true;
 #  programs.throne.enable = true;
 #  programs.throne.tunMode.enable = true;
 programs.nix-ld = {
-  enable = false;
+  enable = true;
   libraries = with pkgs; [
     libx11
     libxext

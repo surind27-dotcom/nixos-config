@@ -11,6 +11,7 @@
   ./modules/home/yazi.nix
   ./modules/home/bash.nix
   ./modules/home/mimeapps.nix
+  ./modules/home/alacritty.nix
   ];
 
   home.stateVersion = "26.05";

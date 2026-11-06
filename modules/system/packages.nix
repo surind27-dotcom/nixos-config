@@ -9,20 +9,20 @@
     zed-editor blender
     gimp vesktop 
     wget qbittorrent
-    git xorg.xrandr
+    git xrandr
     curl lact
-    godot
+    godot lufus
     noctalia 
     discord python3
     appimage-run 
     cava steam-run
     gpu-screen-recorder 
     sptlrx aider-chat
-    toilet 
+    toilet xfce4-xkb-plugin
     libxkbcommon
     thunar
     ristretto xarchiver
     gnome-disk-utility warehouse
-    mindustry-wayland devilutionx
+    mindustry-wayland 
    ];
 }
