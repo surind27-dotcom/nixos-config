@@ -69,7 +69,6 @@
   services.xserver.enable = true;
   services.xserver.desktopManager.xfce.enable = true;
   services.xserver.desktopManager.xterm.enable = false;
-  services.xserver.desktopManager.awesome.enable = true;
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us,ru";
