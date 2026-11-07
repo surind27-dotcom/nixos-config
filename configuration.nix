@@ -61,16 +61,15 @@
     LC_TIME = "ru_RU.UTF-8";
   };
 
-  # Enable the GNOME Desktop Environment.
-  services.displayManager.gdm.enable = false;
+  # Enable the Desktop Environment.
+  # services.displayManager.gdm.enable = false;
+  # services.desktopManager.gnome.enable = false;
   services.displayManager.ly.enable = true;
-  services.desktopManager.gnome.enable = false;
-  services.udisks2.enable = true;
-  services.lact.enable = true;
-  security.polkit.enable = true;
+  programs.niri.enable = true;
   services.xserver.enable = true;
   services.xserver.desktopManager.xfce.enable = true;
   services.xserver.desktopManager.xterm.enable = false;
+  services.xserver.desktopManager.awesome.enable = true;
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us,ru";
@@ -113,9 +112,6 @@
   enable = true;
   extest.enable = true; # Обход проблемы с невидимым/сломанным курсором
 };
-  programs.niri = {
-    enable = true;
-  };
   programs.xwayland.enable = true;
 #  programs.throne.enable = true;
 #  programs.throne.tunMode.enable = true;
@@ -147,7 +143,6 @@ programs.nix-ld = {
     stdenv.cc.cc.lib
   ];
 };
-  programs.driftwm.enable = true;
   # Включает хост-модуль VirtualBox
   virtualisation.virtualbox.host.enable = true;
   virtualisation.virtualbox.host.enableExtensionPack = true;
@@ -162,8 +157,10 @@ programs.nix-ld = {
   nerd-fonts.jetbrains-mono
   nerd-fonts.fira-code
 ];
-
-
+ #etc
+ services.lact.enable = true;
+ services.udisks2.enable = true;
+ security.polkit.enable = true;
 
 
   # Allow unfree packages
