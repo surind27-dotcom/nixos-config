@@ -14,7 +14,6 @@
     godot lufus
     noctalia 
     discord python3
-    appimage-run 
     cava steam-run
     gpu-screen-recorder 
     sptlrx aider-chat
@@ -24,5 +23,6 @@
     ristretto xarchiver
     gnome-disk-utility warehouse
     mindustry-wayland 
+    lutris  wineWow64Packages.stagingFull winetricks
    ];
 }

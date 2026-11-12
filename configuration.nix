@@ -64,12 +64,14 @@
   # Enable the Desktop Environment.
   # services.displayManager.gdm.enable = false;
   # services.desktopManager.gnome.enable = false;
+  #Ly greeter
   services.displayManager.ly.enable = true;
+  #niri
   programs.niri.enable = true;
+  #x11 (xfce)
   services.xserver.enable = true;
   services.xserver.desktopManager.xfce.enable = true;
   services.xserver.desktopManager.xterm.enable = false;
-  # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us,ru";
     variant = "";
@@ -89,9 +91,11 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+  
     # If you want to use JACK applications, uncomment this
     # jack.enable = true;
   };
+  hardware.alsa.enablePersistence = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
@@ -141,6 +145,29 @@ programs.nix-ld = {
     zlib
     stdenv.cc.cc.lib
   ];
+};
+  #Sunshine
+  services.sunshine = {
+  enable = true;
+  autoStart = true;
+  capSysAdmin = true;
+  openFirewall = true;
+};
+  programs.appimage = {
+  enable = true;
+  binfmt = true;
+  package = pkgs.appimage-run.override {
+    extraPkgs = pkgs: with pkgs; [
+      xorg.xcbutilcursor
+      xorg.libxcb
+      # при необходимости можно добавить другие библиотеки
+    ];
+  };
+};
+ programs.gamemode = {
+  enable = true;
+  # Иногда требуется добавить себя в группу для смены приоритетов
+  # enableRenice = true; 
 };
   # Включает хост-модуль VirtualBox
   virtualisation.virtualbox.host.enable = true;

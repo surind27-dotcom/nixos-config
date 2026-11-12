@@ -22,7 +22,7 @@
         {
           services.zapret-discord-youtube = {
             enable = true;
-            configName = "general(ALT)";
+            configName = "general(ALT10)";
             gameFilter = "all";
             listGeneral = [ "gnu.org" "discord.com" "telegram.org" "guix.gnu.org" "distrowatch.com" "exherbolinux.org" ];
             listExclude = [ "ubisoft.com" "origin.com" ];
