@@ -8,7 +8,6 @@
     size = 24;
   };
 
-  # Блок GTK закрывается здесь
   gtk = {
     enable = true;
     theme = {

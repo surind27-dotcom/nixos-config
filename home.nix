@@ -2,8 +2,6 @@
 { pkgs, ... }:
 
 {
-  # home.username и home.homeDirectory НЕ указываем —
-  # NixOS-модуль подставит их из configuration.nix
   imports = [
   ./modules/home/kitty.nix
   ./modules/home/fastfetch.nix
