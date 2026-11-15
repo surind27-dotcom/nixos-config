@@ -1,3 +1,4 @@
 *.save
-*.lock
-hardware-configuration.nix
+.idea/
+.vscode/
+
