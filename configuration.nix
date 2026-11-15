@@ -113,7 +113,7 @@
   programs.firefox.enable = true;
   programs.steam = {
   enable = true;
-  extest.enable = true; # Обход проблемы с невидимым/сломанным курсором
+  extest.enable = true; 
 };
   programs.xwayland.enable = true;
 #  programs.throne.enable = true;
@@ -124,7 +124,7 @@ programs.nix-ld = {
     libx11
     libxext
     libxcursor
-    libxrandr  # <--- Вот это библиотека (libXrandr.so), она нужна
+    libxrandr  
     libxxf86vm
     libxi
     libxrender
@@ -148,7 +148,7 @@ programs.nix-ld = {
 };
   #Sunshine
   services.sunshine = {
-  enable = true;
+  enable = false;
   autoStart = true;
   capSysAdmin = true;
   openFirewall = true;
@@ -158,24 +158,17 @@ programs.nix-ld = {
   binfmt = true;
   package = pkgs.appimage-run.override {
     extraPkgs = pkgs: with pkgs; [
-      xorg.xcbutilcursor
-      xorg.libxcb
-      # при необходимости можно добавить другие библиотеки
+      xcbutilcursor
+      libxcb
     ];
   };
 };
  programs.gamemode = {
   enable = true;
-  # Иногда требуется добавить себя в группу для смены приоритетов
-  # enableRenice = true; 
 };
   # Включает хост-модуль VirtualBox
   virtualisation.virtualbox.host.enable = true;
   virtualisation.virtualbox.host.enableExtensionPack = true;
-  services.flatpak.enable = true;
-
-  # Добавляет вашего пользователя в группу vboxusers.
-  # Без этого вы не сможете запускать виртуальные машины от своего имени.
   users.extraGroups.vboxusers.members = [ "danil" ];
 
 #Fonts Nerd Fonts
@@ -187,6 +180,7 @@ programs.nix-ld = {
  services.lact.enable = true;
  services.udisks2.enable = true;
  security.polkit.enable = true;
+ services.flatpak.enable = true; 
 
 
   # Allow unfree packages
@@ -241,7 +235,7 @@ programs.nix-ld = {
   # =========================================================================
   hardware.graphics = {
   enable = true;
-  enable32Bit = true;  # <-- Убедитесь, что эта строка есть
+  enable32Bit = true;  
 };
 
   services.xserver.videoDrivers = [ "nvidia" ];
@@ -249,7 +243,7 @@ programs.nix-ld = {
   hardware.nvidia = {
     modesetting.enable = true;
     powerManagement.enable = true;
-    open = true; # Ставь true, только если у тебя видеокарта RTX 2000 или новее
+    open = true; # Ставь true только если у тебя видеокарта RTX 2000 или новее
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
