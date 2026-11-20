@@ -11,7 +11,6 @@
       ./modules/system/disks.nix
       ./modules/system/packages.nix
       ./modules/system/aliases.nix
-      ./modules/system/ollama.nix
     ];
 #flakes enable
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -116,8 +115,8 @@
   extest.enable = true; 
 };
   programs.xwayland.enable = true;
-#  programs.throne.enable = true;
-#  programs.throne.tunMode.enable = true;
+  #programs.throne.enable = true;
+  #programs.throne.tunMode.enable = true;
 programs.nix-ld = {
   enable = true;
   libraries = with pkgs; [

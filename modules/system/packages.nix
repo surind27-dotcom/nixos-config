@@ -5,16 +5,16 @@
     alacritty yazi
     fuzzel kitty
     xwayland-satellite kdePackages.kdenlive  
-    gnome-extension-manager mpv 
+    mpv 
     zed-editor blender
-    gimp vesktop 
+    gimp  
     wget qbittorrent
     git xrandr
     curl lact
     godot lufus
     noctalia 
     discord python3
-    cava steam-run
+    cava 
     gpu-screen-recorder 
     sptlrx aider-chat
     toilet xfce4-xkb-plugin
