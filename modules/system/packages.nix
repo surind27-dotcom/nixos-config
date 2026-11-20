@@ -3,7 +3,7 @@
  environment.systemPackages = with pkgs; [
     fastfetch bash-completion
     alacritty yazi
-    fuzzel kitty
+    kitty
     xwayland-satellite kdePackages.kdenlive  
     mpv 
     zed-editor blender
@@ -11,7 +11,7 @@
     wget qbittorrent
     git xrandr
     curl lact
-    godot lufus
+    godot 
     noctalia 
     discord python3
     cava 
@@ -22,7 +22,7 @@
     thunar 
     ristretto xarchiver
     gnome-disk-utility warehouse
-    mindustry-wayland 
     lutris  wineWow64Packages.stagingFull winetricks
+    xclip feh rofi
    ];
 }
