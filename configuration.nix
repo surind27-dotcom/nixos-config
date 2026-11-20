@@ -77,7 +77,14 @@
     options = "grp:win_space_toggle";
   };
   #CWM
+  services.xserver = {
   windowManager.cwm.enable = true;
+  displayManager.sessionCommands = ''
+  xrandr --output DP-0 --mode 1920x1080 --rate 144.002 &
+  feh --bg-fill Pictures/wallpapers/QIP\ Shot\ -\ Screen\ 784.jpg &
+  ~/.local/bin/x11-layout-notify.sh &
+  '';
+ };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
