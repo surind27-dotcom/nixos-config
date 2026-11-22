@@ -8,6 +8,7 @@
     "rw"
     "uid=1000"
     "gid=100"
+    "exec"
     "umask=0000"
     "nofail"
     "noatime"

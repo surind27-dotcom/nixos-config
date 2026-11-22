@@ -82,7 +82,7 @@
   displayManager.sessionCommands = ''
   xrandr --output DP-0 --mode 1920x1080 --rate 144.002 &
   feh --bg-fill Pictures/wallpapers/QIP\ Shot\ -\ Screen\ 784.jpg &
-  ~/.local/bin/x11-layout-notify.sh &
+  polybar main & 
   '';
  };
 
@@ -173,6 +173,7 @@ programs.nix-ld = {
  programs.gamemode = {
   enable = true;
 };
+ programs.gamescope.enable = true;
   # Включает хост-модуль VirtualBox
   virtualisation.virtualbox.host.enable = true;
   virtualisation.virtualbox.host.enableExtensionPack = true;

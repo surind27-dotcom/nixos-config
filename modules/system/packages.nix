@@ -23,6 +23,6 @@
     ristretto xarchiver
     gnome-disk-utility warehouse
     lutris  wineWow64Packages.stagingFull winetricks
-    feh rofi polybar xkb-switch libnotify
+    feh rofi polybar xkb-switch libnotify slock
    ];
 }
