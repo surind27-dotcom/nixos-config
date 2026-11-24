@@ -11,6 +11,7 @@
       ./modules/system/disks.nix
       ./modules/system/packages.nix
       ./modules/system/aliases.nix
+      
     ];
 #flakes enable
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -63,13 +64,15 @@
   # Enable the Desktop Environment.
   # services.displayManager.gdm.enable = false;
   # services.desktopManager.gnome.enable = false;
+  #KDE plasma
+  services.desktopManager.plasma6.enable = true;
   #Ly greeter
   services.displayManager.ly.enable = true;
   #niri
   programs.niri.enable = true;
   #x11 (xfce)
   services.xserver.enable = true;
-  services.xserver.desktopManager.xfce.enable = true;
+  services.xserver.desktopManager.xfce.enable = false;
   services.xserver.desktopManager.xterm.enable = false;
   services.xserver.xkb = {
     layout = "us,ru";
@@ -77,15 +80,15 @@
     options = "grp:win_space_toggle";
   };
   #CWM
-  services.xserver = {
-  windowManager.cwm.enable = true;
+  /*services.xserver = {
+  windowManager.cwm.enable = false;
   displayManager.sessionCommands = ''
   xrandr --output DP-0 --mode 1920x1080 --rate 144.002 &
   feh --bg-fill Pictures/wallpapers/QIP\ Shot\ -\ Screen\ 784.jpg &
   polybar main & 
   '';
  };
-
+*/
   # Enable CUPS to print documents.
   services.printing.enable = true;
 

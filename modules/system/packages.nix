@@ -19,9 +19,6 @@
     sptlrx aider-chat
     toilet xfce4-xkb-plugin
     libxkbcommon 
-    thunar 
-    ristretto xarchiver
-    gnome-disk-utility warehouse
     lutris  wineWow64Packages.stagingFull winetricks
     feh rofi polybar xkb-switch libnotify slock
    ];
