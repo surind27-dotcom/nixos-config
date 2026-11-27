@@ -39,6 +39,7 @@
 
   # Set your time zone.
   time.timeZone = "Europe/Moscow";
+  time.hardwareClockInLocalTime = true;
 
   # Select internationalisation properties.
   i18n = {

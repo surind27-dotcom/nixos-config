@@ -20,6 +20,6 @@
     toilet xfce4-xkb-plugin
     libxkbcommon 
     lutris  wineWow64Packages.stagingFull winetricks
-    feh rofi polybar xkb-switch libnotify slock
+    # feh rofi polybar xkb-switch libnotify slock
    ];
 }
