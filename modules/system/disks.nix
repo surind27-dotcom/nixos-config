@@ -16,20 +16,17 @@
 };
 
 fileSystems."/mnt/disk2" = {
-  device = "/dev/disk/by-uuid/BEF096DAF096986B";
-  fsType = "ntfs3";
+  device = "/dev/disk/by-uuid/a1253157-083f-4b2e-9b0c-f0ea6fc91a5f";
+  fsType = "ext4";
   options = [
     "rw"
-    "uid=1000"
-    "gid=100"
-    "umask=0000"
     "nofail"
     "noatime"
   ];
 };
-fileSystems."/mnt/disk1/SteamLibrary/steamapps/compatdata" = {
-  device = "/home/danil/.steam/steam/steamapps/compatdata";
-  fsType = "none";
-  options = [ "bind" "nofail" ];
-};
+#fileSystems."/mnt/disk1/SteamLibrary/steamapps/compatdata" = {
+#  device = "/home/danil/.steam/steam/steamapps/compatdata";
+#  fsType = "none";
+#  options = [ "bind" "nofail" ];
+#};
 }

@@ -115,7 +115,7 @@
   users.users."danil" = {
     isNormalUser = true;
     description = "danil";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "wireshark"];
     packages = with pkgs; [
     #  thunderbird
     ];
@@ -193,6 +193,10 @@ programs.nix-ld = {
  services.udisks2.enable = true;
  security.polkit.enable = true;
  services.flatpak.enable = true; 
+ programs.wireshark = {
+ enable = true;
+ package = pkgs.wireshark;
+ };
 
 
   # Allow unfree packages
